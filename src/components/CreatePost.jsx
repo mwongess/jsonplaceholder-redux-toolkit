@@ -12,7 +12,7 @@ const CreatePost = () => {
     const newPost = {
       title,
       body,
-      userId: 1, // Assuming a static userId for now
+      userId: 1, 
     };
     dispatch(createPost(newPost));
     setTitle('');
@@ -29,12 +29,14 @@ const CreatePost = () => {
             className="text-lg font-bold"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            required
           />
           <textarea
             rows={1}
             placeholder="Body"
             value={body}
             onChange={(e) => setBody(e.target.value)}
+            required
           />
         </div>
         <button type="submit">Post</button>

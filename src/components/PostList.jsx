@@ -15,14 +15,13 @@ const PostList = () => {
     }, [status, dispatch]);
 
     if (status === 'loading') {
-        return <Loading/>
+        return <Loading />
     }
 
     if (status === 'failed') {
         return <div>Error: {error}</div>;
     }
 
-    // Reverse the posts array to display the latest data first
     const reversedPosts = [...posts].reverse();
 
     return (
