@@ -6,13 +6,17 @@ function App() {
 
   return (
     <div className='flex gap-6 p-8 px-[15%]'>
-      <div className='shadow w-1/4 rounded-lg'></div>
+      <div className='flex flex-col items-center border w-1/4 rounded-lg h-fit p-4'>
+        <img className="rounded-full h-[4.5rem] w-[4.5rem]" src="https://avatars.githubusercontent.com/u/86522089?v=4" alt="Profile" />
+        <h1 className='font-bold text-lg'>Amos Mwongela</h1>
+        <p className='text-center text-gray-500 text-sm'>Full Stack Developer (Ts , React (Next.Js) , Angular , Node..Js, MySQL ,MSSQL ,AWS)</p>
+      </div>
       <div className='flex flex-col gap-2 w-1/2 rounded-lg '>
-        <CreatePost/>
+        <CreatePost />
         <hr />
         <PostList />
       </div>
-      <div className='shadow w-1/4 rounded-lg'></div>
+      <div className='shadow w-1/4 rounded-lg h-fit'></div>
     </div>
   )
 }

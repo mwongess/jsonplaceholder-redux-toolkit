@@ -1,14 +1,37 @@
-import { useSelector } from "react-redux"
-import Post from "./Post"
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Post from './Post';
+import { fetchPosts } from '../features/posts/postSlice';
+import Loading from './Loading';
 
 const PostList = () => {
-    const posts = useSelector((state) => state.posts)
+    const dispatch = useDispatch();
+    const { posts, status, error } = useSelector((state) => state.post);
+
+    useEffect(() => {
+        if (status === 'idle') {
+            dispatch(fetchPosts());
+        }
+    }, [status, dispatch]);
+
+    if (status === 'loading') {
+        return <Loading/>
+    }
+
+    if (status === 'failed') {
+        return <div>Error: {error}</div>;
+    }
+
+    // Reverse the posts array to display the latest data first
+    const reversedPosts = [...posts].reverse();
+
     return (
         <div className="flex flex-col gap-2">
-            <Post />
-            <Post />
+            {reversedPosts.map((post) => (
+                <Post key={post.id} id={post.id} title={post.title} body={post.body} />
+            ))}
         </div>
-    )
-}
+    );
+};
 
-export default PostList
+export default PostList;
