@@ -16,7 +16,7 @@ const Post = ({ id, title, body }) => {
 
     const toggleEditModal = () => {
         setShowEditModal(prevShowEditModal => !prevShowEditModal);
-        setShowOptions(false); // Close options dropdown when opening edit modal
+        setShowOptions(false);
     };
 
     const handleClickOutside = (event) => {
@@ -43,7 +43,7 @@ const Post = ({ id, title, body }) => {
     const handleUpdate = () => {
         console.log(id);
         const post = { title: editedTitle, body: editedBody }
-        dispatch(updatePost({id, post}));
+        dispatch(updatePost({ id, post }));
         setShowEditModal(false);
     };
 
