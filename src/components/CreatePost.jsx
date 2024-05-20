@@ -12,7 +12,7 @@ const CreatePost = () => {
     const newPost = {
       title,
       body,
-      userId: 1, 
+      userId: 1,
     };
     dispatch(createPost(newPost));
     setTitle('');

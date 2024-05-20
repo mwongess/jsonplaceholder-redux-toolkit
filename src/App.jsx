@@ -11,11 +11,13 @@ function App() {
         <h1 className='font-bold text-lg'>Amos Mwongela</h1>
         <p className='text-center text-gray-500 text-sm'>Full Stack Developer (Ts , React (Next.Js) , Angular , Node..Js, MySQL ,MSSQL ,AWS)</p>
       </div>
+
       <div className='flex flex-col gap-2 w-full sm:w-1/2 rounded-lg '>
         <CreatePost />
         <hr />
         <PostList />
       </div>
+
       <div className='shadow w-1/4 rounded-lg h-fit'></div>
     </div>
   )
